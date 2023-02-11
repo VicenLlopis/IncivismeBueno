@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "899968441441",
+    "project_id": "projectocarles",
+    "storage_bucket": "projectocarles.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899968441441:android:cae2debb0bc00703971e20",
+        "android_client_info": {
+          "package_name": "com.example.incivismebueno"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "899968441441-sf890229tig0i61vtqk4nca9fidg8aht.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF8IaADQdhYFa9OeWNpmx7LXeNjYLZJrc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "899968441441-bl1h61i95tp1vekjr1v0598d9s2fs7mr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
