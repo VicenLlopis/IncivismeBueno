@@ -24,6 +24,7 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -40,7 +41,7 @@ public class SharedViewModel extends AndroidViewModel {
     private final MutableLiveData<String> checkPermission = new MutableLiveData<>();
     private final MutableLiveData<String> buttonText = new MutableLiveData<>();
     private final MutableLiveData<Boolean> progressBar = new MutableLiveData<>();
-
+    private final MutableLiveData<LatLng> currentLatLng = new MutableLiveData<>();
 
     private boolean mTrackingLocation;
     FusedLocationProviderClient mFusedLocationClient;
@@ -49,6 +50,10 @@ public class SharedViewModel extends AndroidViewModel {
         super(application);
 
         this.app = application;
+    }
+
+    public MutableLiveData<LatLng> getCurrentLatLng() {
+        return currentLatLng;
     }
 
     void setFusedLocationClient(FusedLocationProviderClient mFusedLocationClient) {
@@ -163,6 +168,9 @@ public class SharedViewModel extends AndroidViewModel {
                             currentAddress.postValue(String.format("Direcció: %1$s \n Hora: %2$tr", finalResultMessage, System.currentTimeMillis()));
                     });
                 }
+
+                LatLng latlng = new LatLng(location.getLatitude(), location.getLongitude());
+                currentLatLng.postValue(latlng);
 
             } catch (IOException ioException) {
                 resultMessage = "Servei no disponible";
